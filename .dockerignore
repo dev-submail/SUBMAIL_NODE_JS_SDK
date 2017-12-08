@@ -1,0 +1,7 @@
+node_mudules/
+.git
+.gitignore
+.idea
+.DS_Store
+*.swp
+*.log
