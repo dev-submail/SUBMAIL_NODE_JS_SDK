@@ -1,11 +1,15 @@
 
 # SUBMAIL NODE JS SDK
 
-> 概览 
+>###  概览 
 
     SUBMAIL NODE JS SDK 需要 npm 支持。
+    
+> ### 下载
 
-> 文件目录索引
+[SUBMAIL_NODE_JS_SDK](https://github.com/dev-submail/SUBMAIL_NODE_JS_SDK)
+
+> ### 文件目录索引
 
 ```
  lib --- 资源包 -----------------------------------------------------
@@ -16,6 +20,7 @@
      |  --- multiData.js（multi 数据类）
      |  --- voice.js（语音验证码和语音通知基类）
      |  --- intersms.js（国际短信发送基类）
+     |  --- mms.js(彩信发送基类)
      |  --- addressbookMail.js（邮件地址簿管理类）
      |  --- addressbookMessage.js（短信地址簿管理类）
      |  --- messageSend.js（短信 send 接口类）
@@ -34,6 +39,9 @@
      |  --- intersmsSend.js（国际短信 send 接口类）
      |  --- intersmsXsend.js（国际短信 Xsend 接口类）
      |  --- intersmsMultiXsend.js（国际短信 multixsend 批量发送接口类）
+     |  --- mmsXsend.js(彩信xend接口)
+     |  --- mmsMultiXsend.js（彩信群发接口）
+     
   demo --- 示例代码 --------------------------------------------------
      |
      |  --- addressbookMailSubscribeDemo.js
@@ -56,11 +64,13 @@
      |  --- intersmsSendDemo.js
      |  --- intersmsXsendDemo.js
      |  --- intersmsMultiXsendDemo.js
+     |  ---mmsXsendDemo.js
+     |  ---mmsMultiXsendDemo.js
      |  -------------------------------------------------------------
 ```
-> 使用指引
+ ## 使用指引
 
-    messageSend 类
+> ###     messageSend 类
 
 
 方法/函数 | 参数说明
@@ -82,8 +92,8 @@ message.set_tag('32KF2V444T89G923790237G09W0');
 message.send();
 
 ```
-
-    messageXSend 类
+---
+> ###     messageXSend 类
 
 
 方法/函数 | 参数说明
@@ -107,8 +117,8 @@ message.set_tag('32KF2V444T89G923790237G09W0');
 message.xsend();
 
 ```
-   
-    messageMultiXSend 类
+  --- 
+> ###     messageMultiXSend 类
 
 
 方法/函数 | 参数说明
@@ -139,8 +149,8 @@ message.set_tag('32KF2V444T89G923790237G09W0');
 message.multiXsend();
 
 ``` 
-
-    messageTemplatePost 类
+---
+> ###     messageTemplatePost 类
 
 
 方法/函数 | 参数说明
@@ -163,8 +173,8 @@ message.templatePost();
 
 
 ``` 
-
-     messageTemplateGet 类
+---
+> ###      messageTemplateGet 类
 
 
 方法/函数 | 参数说明
@@ -183,8 +193,8 @@ message.templateGet();
 
 
 ``` 
-
-     messageTemplatePut 类
+---
+> ###      messageTemplatePut 类
 
 
 方法/函数 | 参数说明
@@ -209,8 +219,8 @@ message.templatePut();
 
 
 ``` 
-
-     messageTemplateDelete 类
+---
+> ###      messageTemplateDelete 类
 
 
 方法/函数 | 参数说明
@@ -229,8 +239,8 @@ message.templateDelete();
 
 
 ``` 
-
-    mailSend 类
+---
+> ###     mailSend 类
 
 
 方法/函数 | 参数说明
@@ -267,7 +277,9 @@ mailSend.send();
 
 ``` 
 
-    mailXSend 类
+---
+
+> ###     mailXSend 类
 
 
 方法/函数 | 参数说明
@@ -302,7 +314,9 @@ mailXSend.xsend();
 
 ``` 
 
-     voiceCode 类
+---
+
+> ###      voiceCode 类
 
 
 方法/函数 | 参数说明
@@ -324,7 +338,8 @@ voice.verify();
 
 ```
 
-     voiceXsend 类
+---
+> ###      voiceXsend 类
 
 
 方法/函数 | 参数说明
@@ -346,8 +361,8 @@ voice.add_var('code', '88888888');
 voice.xsend();
 
 ```
-
-     voiceSend 类
+---
+> ###      voiceSend 类
 
 
 方法/函数 | 参数说明
@@ -368,8 +383,8 @@ voice.send();
 
 
 ```
-
-     voiceMultiXsend 类
+---
+> ###      voiceMultiXsend 类
 
 
 方法/函数 | 参数说明
@@ -397,8 +412,8 @@ voice.multiXsend();
 
 
 ```
-
-     intersmsXsend 类
+---
+> ###      intersmsXsend 类
 
 
 方法/函数 | 参数说明
@@ -421,7 +436,9 @@ intersms.xsend();
 
 ```
 
-     intersmsSend 类
+---
+
+> ###      intersmsSend 类
 
 
 方法/函数 | 参数说明
@@ -443,7 +460,8 @@ intersms.send();
 
 ```
 
-     voiceMultiXsend 类
+---
+> ###      voiceMultiXsend 类
 
 
 方法/函数 | 参数说明
@@ -471,8 +489,8 @@ intersms.multiXsend();
 
 
 ```
-
-     addressbookMessage 类
+---
+> ###      addressbookMessage 类
 
 
 方法/函数 | 参数说明
@@ -505,9 +523,9 @@ addressbookMessage.unsubscribe();
 
 
 ```
+---
 
-
-     addressbookMail 类
+> ###      addressbookMail 类
 
 
 方法/函数 | 参数说明
@@ -540,8 +558,69 @@ addressbookMail.unsubscribe();
 
 ```
 
+---
 
-> 请求结果
+> ###   mmsXSend 类
+
+
+方法/函数 | 参数说明
+---|---
+set_to() | 11位国内手机号码，仅支持单个号码
+set_project()|  如何获取模板 ID 请参考 [SUBMAIL 开发文档](https://www.mysubmail.com/chs/documents/developer/MmSw12)
+add_var() |使用文本变量动态控制短信中的文本 
+set_tag()| 标签参数，SUBHOOK 事件推送中会包含此参数，最大长度不超过32位
+
+
+```
+//示例代码
+
+var MMSXSend = require('../lib/mmsXSend');
+var submail = new MMSXSend();
+
+submail.set_to('152********');
+submail.set_project('rBfTA9');
+submail.add_var('code', '8888888');
+submail.set_tag('32KF2V444T89G923790237G09W0');
+submail.xsend();
+
+```
+
+  ---
+> ###     mmsMultiXSend 类
+
+
+方法/函数 | 参数说明
+---|---
+add_multi() | 收件人 to 联系人参数和 vars 文本变量的整合模式
+set_project()|  如何获取模板 ID 请参考 [SUBMAIL 开发文档](https://www.mysubmail.com/chs/documents/developer/MmSw12)
+set_tag()| 标签参数，SUBHOOK 事件推送中会包含此参数，最大长度不超过32位
+
+
+```
+//示例代码
+
+var MMSMultiXsend = require('../lib/mmsMultiXsend');
+var Multi = require('../lib/multiData');
+var mms = new MMSMultiXsend();
+
+
+var data = ['152********','186********','133********'];
+for(index in data) {
+     var multi = new Multi();
+     multi.set_to(data[index]);
+     multi.add_var('name','submail');
+     multi.add_var('code','8888888');
+     message.add_multi(multi);
+}
+mms.set_project('rBfTA9');
+mms.set_tag('32KF2V444T89G923790237G09W0');
+mms.multiXsend();
+
+``` 
+
+
+
+> ### 请求结果
      
     成功：success
     失败：请参考 [SUBMAIL 开发文档接口错误代码](https://www.mysubmail.com/chs/documents/developer/c8ujr)
